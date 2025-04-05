@@ -72,13 +72,13 @@ public class PropertyExtractingDelegatingItemWriter<T> extends AbstractMethodInv
 	}
 
 	/**
-	 * @param fieldsUsedAsMethodArguments the values of the these item's fields will be
-	 * used as arguments for the delegate method. Nested property values are supported,
-	 * e.g. <code>address.city</code>
+	 * Sets the values of the item's fields to be used as arguments for the delegate
+	 * method.
+	 * <p>
+	 * Nested property values are supported, e.g. <code>address.city</code>
 	 */
 	public void setFieldsUsedAsTargetMethodArguments(String[] fieldsUsedAsMethodArguments) {
-		this.fieldsUsedAsTargetMethodArguments = Arrays.asList(fieldsUsedAsMethodArguments)
-			.toArray(new String[fieldsUsedAsMethodArguments.length]);
+		this.fieldsUsedAsTargetMethodArguments = fieldsUsedAsMethodArguments.clone();
 	}
 
 }

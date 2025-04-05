@@ -26,7 +26,7 @@ import java.util.Objects;
 
 /**
  * Encapsulation of a list of items to be processed and possibly a list of failed items to
- * be skipped. To mark an item as skipped clients should iterate over the chunk using the
+ * be skipped. To mark an item as skipped, clients should iterate over the chunk using the
  * {@link #iterator()} method, and if there is a failure call
  * {@link Chunk.ChunkIterator#remove()} on the iterator. The skipped items are then
  * available through the chunk.
@@ -100,21 +100,21 @@ public class Chunk<W> implements Iterable<W>, Serializable {
 	}
 
 	/**
-	 * @return a copy of the items to be processed as an unmodifiable list
+	 * Return a copy of the items to be processed as an unmodifiable list.
 	 */
 	public List<W> getItems() {
 		return Collections.unmodifiableList(items);
 	}
 
 	/**
-	 * @return a copy of the skips as an unmodifiable list
+	 * Return a copy of the skips as an unmodifiable list.
 	 */
 	public List<SkipWrapper<W>> getSkips() {
 		return Collections.unmodifiableList(skips);
 	}
 
 	/**
-	 * @return a copy of the anonymous errors as an unmodifiable list
+	 * Return a copy of the anonymous errors as an unmodifiable list.
 	 */
 	public List<Exception> getErrors() {
 		return Collections.unmodifiableList(errors);
@@ -130,7 +130,7 @@ public class Chunk<W> implements Iterable<W>, Serializable {
 	}
 
 	/**
-	 * @return true if there are no items in the chunk
+	 * Return {@code true} if there are no items in the chunk.
 	 */
 	public boolean isEmpty() {
 		return items.isEmpty();
@@ -146,7 +146,7 @@ public class Chunk<W> implements Iterable<W>, Serializable {
 	}
 
 	/**
-	 * @return the number of items (excluding skips)
+	 * Return the number of items (excluding skips).
 	 */
 	public int size() {
 		return items.size();

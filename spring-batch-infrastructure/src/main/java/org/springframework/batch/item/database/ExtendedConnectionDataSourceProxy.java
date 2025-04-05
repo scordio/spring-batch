@@ -142,6 +142,7 @@ public class ExtendedConnectionDataSourceProxy implements SmartDataSource, Initi
 	}
 
 	/**
+	 * Start the suppression of close calls for the given connection.
 	 * @param connection the {@link Connection} that close suppression is requested for
 	 */
 	public void startCloseSuppression(Connection connection) {
@@ -158,6 +159,7 @@ public class ExtendedConnectionDataSourceProxy implements SmartDataSource, Initi
 	}
 
 	/**
+	 * Stop the suppression of close calls for the given connection.
 	 * @param connection the {@link Connection} that close suppression should be turned
 	 * off for
 	 */

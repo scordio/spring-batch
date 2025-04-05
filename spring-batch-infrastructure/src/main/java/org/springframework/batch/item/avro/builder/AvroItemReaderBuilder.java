@@ -24,6 +24,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
+import java.nio.charset.Charset;
+
 /**
  * A builder implementation for the {@link AvroItemReader}.
  *
@@ -80,7 +82,7 @@ public class AvroItemReaderBuilder<T> {
 	 */
 	public AvroItemReaderBuilder<T> schema(String schemaString) {
 		Assert.hasText(schemaString, "A 'schema' is required.");
-		this.schema = new ByteArrayResource(schemaString.getBytes());
+		this.schema = new ByteArrayResource(schemaString.getBytes(Charset.defaultCharset()));
 		return this;
 	}
 

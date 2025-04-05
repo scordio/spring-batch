@@ -49,7 +49,7 @@ public class MongoItemWriterBuilder<T> {
 	 */
 	@Deprecated(since = "5.1", forRemoval = true)
 	public MongoItemWriterBuilder<T> delete(boolean delete) {
-		this.mode = (delete) ? Mode.REMOVE : Mode.UPSERT;
+		this.mode = delete ? Mode.REMOVE : Mode.UPSERT;
 
 		return this;
 	}

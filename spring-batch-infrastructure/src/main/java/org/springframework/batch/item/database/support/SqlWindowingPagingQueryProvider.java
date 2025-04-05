@@ -103,11 +103,7 @@ public class SqlWindowingPagingQueryProvider extends AbstractSqlPagingQueryProvi
 	}
 
 	protected String getOverClause() {
-		StringBuilder sql = new StringBuilder();
-
-		sql.append(" ORDER BY ").append(buildSortClause(this));
-
-		return sql.toString();
+		return " ORDER BY " + buildSortClause(this);
 	}
 
 	protected String getOverSubstituteClauseStart() {

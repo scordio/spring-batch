@@ -22,6 +22,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.WritableResource;
 import org.springframework.util.Assert;
 
+import java.nio.charset.Charset;
+
 /**
  * A builder implementation for the {@link AvroItemWriter}.
  *
@@ -40,7 +42,8 @@ public class AvroItemWriterBuilder<T> {
 	private String name = AvroItemWriter.class.getSimpleName();
 
 	/**
-	 * @param resource the {@link WritableResource} used to write the serialized data.
+	 * Sets the {@link WritableResource} used to write the serialized data.
+	 * @param resource the {@code WritableResource} used to write the serialized data.
 	 * @return The current instance of the builder.
 	 */
 	public AvroItemWriterBuilder<T> resource(WritableResource resource) {
@@ -50,7 +53,9 @@ public class AvroItemWriterBuilder<T> {
 	}
 
 	/**
-	 * @param schema the Resource containing the schema JSON used to serialize the output.
+	 * Sets the {@link Resource} containing the schema JSON used to serialize the output.
+	 * @param schema the {@code Resource} containing the schema JSON used to serialize the
+	 * output.
 	 * @return The current instance of the builder.
 	 */
 	public AvroItemWriterBuilder<T> schema(Resource schema) {
@@ -61,17 +66,19 @@ public class AvroItemWriterBuilder<T> {
 	}
 
 	/**
+	 * Sets the String containing the schema JSON used to serialize the output.
 	 * @param schemaString the String containing the schema JSON used to serialize the
 	 * output.
 	 * @return The current instance of the builder.
 	 */
 	public AvroItemWriterBuilder<T> schema(String schemaString) {
 		Assert.hasText(schemaString, "A 'schemaString' is required.");
-		this.schema = new ByteArrayResource(schemaString.getBytes());
+		this.schema = new ByteArrayResource(schemaString.getBytes(Charset.defaultCharset()));
 		return this;
 	}
 
 	/**
+	 * Sets the Class of objects to be serialized.
 	 * @param type the Class of objects to be serialized.
 	 * @return The current instance of the builder.
 	 */

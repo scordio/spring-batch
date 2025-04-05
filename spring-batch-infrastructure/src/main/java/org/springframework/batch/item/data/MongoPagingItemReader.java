@@ -67,6 +67,7 @@ import org.springframework.util.ClassUtils;
  * @author Mahmoud Ben Hassine
  * @author Parikshit Dutta
  */
+@SuppressWarnings("removal")
 public class MongoPagingItemReader<T> extends MongoItemReader<T> {
 
 	/**

@@ -85,7 +85,6 @@ class PartitionFileJobFunctionalTests implements ApplicationContextAware {
 		int itemCount = inputs.size();
 		assertTrue(itemCount > 0, "No entries were available in the input");
 
-		inputs.iterator();
 		for (int i = 0; i < itemCount; i++) {
 			assertEquals(inputs.get(i).getCredit().add(CustomerCreditIncreaseProcessor.FIXED_AMOUNT).intValue(),
 					outputs.get(i).getCredit().intValue());

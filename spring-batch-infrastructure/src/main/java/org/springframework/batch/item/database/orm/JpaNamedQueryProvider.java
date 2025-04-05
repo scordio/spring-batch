@@ -42,14 +42,14 @@ public class JpaNamedQueryProvider<E> extends AbstractJpaQueryProvider {
 	}
 
 	/**
-	 * @param namedQuery name of a jpa named query
+	 * Set the name of a JPA named query.
 	 */
 	public void setNamedQuery(String namedQuery) {
 		this.namedQuery = namedQuery;
 	}
 
 	/**
-	 * @param entityClazz name of a jpa entity class
+	 * Set the name of a JPA entity class.
 	 */
 	public void setEntityClass(Class<E> entityClazz) {
 		this.entityClass = entityClazz;

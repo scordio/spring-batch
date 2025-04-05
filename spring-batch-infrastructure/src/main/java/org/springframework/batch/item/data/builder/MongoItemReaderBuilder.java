@@ -40,6 +40,7 @@ import org.springframework.util.StringUtils;
  * @deprecated Use {@link MongoPagingItemReaderBuilder} instead. Scheduled for removal in
  * v5.3 or later.
  */
+@SuppressWarnings("removal")
 @Deprecated(since = "5.1", forRemoval = true)
 public class MongoItemReaderBuilder<T> {
 

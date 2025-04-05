@@ -165,14 +165,14 @@ public class JpaPagingItemReader<T> extends AbstractPagingItemReader<T> {
 	}
 
 	/**
-	 * @param queryString JPQL query string
+	 * Set the JPQL query string.
 	 */
 	public void setQueryString(String queryString) {
 		this.queryString = queryString;
 	}
 
 	/**
-	 * @param queryProvider JPA query provider
+	 * Set the {@link JpaQueryProvider}.
 	 */
 	public void setQueryProvider(JpaQueryProvider queryProvider) {
 		this.queryProvider = queryProvider;

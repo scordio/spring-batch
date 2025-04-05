@@ -17,6 +17,7 @@ package org.springframework.batch.item.database.support;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import javax.sql.DataSource;
 
 import org.springframework.batch.support.DatabaseType;
@@ -85,7 +86,7 @@ public class DefaultDataFieldMaxValueIncrementerFactory implements DataFieldMaxV
 
 	@Override
 	public DataFieldMaxValueIncrementer getIncrementer(String incrementerType, String incrementerName) {
-		DatabaseType databaseType = DatabaseType.valueOf(incrementerType.toUpperCase());
+		DatabaseType databaseType = DatabaseType.valueOf(incrementerType.toUpperCase(Locale.getDefault()));
 
 		if (databaseType == DB2 || databaseType == DB2AS400) {
 			return new Db2LuwMaxValueIncrementer(dataSource, incrementerName);

@@ -36,6 +36,7 @@ import org.springframework.util.StringUtils;
  * @author Parikshit Dutta
  * @since 5.1
  */
+@SuppressWarnings("removal")
 public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 
 	/**
@@ -45,6 +46,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @param saveState defaults to true
 	 * @return The current instance of the builder.
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> saveState(boolean saveState) {
 		this.saveState = saveState;
 
@@ -59,6 +61,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder.
 	 * @see org.springframework.batch.item.ItemStreamSupport#setName(String)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> name(String name) {
 		this.name = name;
 
@@ -71,6 +74,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder.
 	 * @see org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader#setMaxItemCount(int)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> maxItemCount(int maxItemCount) {
 		this.maxItemCount = maxItemCount;
 
@@ -83,6 +87,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return this instance for method chaining
 	 * @see org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader#setCurrentItemCount(int)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> currentItemCount(int currentItemCount) {
 		this.currentItemCount = currentItemCount;
 
@@ -97,6 +102,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setTemplate(MongoOperations)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> template(MongoOperations template) {
 		this.template = template;
 
@@ -111,6 +117,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setQuery(String)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> jsonQuery(String query) {
 		this.jsonQuery = query;
 
@@ -124,6 +131,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setTargetType(Class)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> targetType(Class<? extends T> targetType) {
 		this.targetType = targetType;
 
@@ -137,6 +145,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setParameterValues(List)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> parameterValues(List<Object> parameterValues) {
 		this.parameterValues = parameterValues;
 
@@ -149,6 +158,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setParameterValues(List)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> parameterValues(Object... parameterValues) {
 		return parameterValues(Arrays.asList(parameterValues));
 	}
@@ -159,6 +169,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setFields(String)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> fields(String fields) {
 		this.fields = fields;
 
@@ -173,6 +184,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setSort(Map)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> sorts(Map<String, Sort.Direction> sorts) {
 		this.sorts = sorts;
 
@@ -185,6 +197,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setCollection(String)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> collection(String collection) {
 		this.collection = collection;
 
@@ -197,6 +210,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return The current instance of the builder
 	 * @see MongoPagingItemReader#setHint(String)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> hint(String hint) {
 		this.hint = hint;
 
@@ -209,6 +223,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return this instance for method chaining
 	 * @see MongoPagingItemReader#setPageSize(int)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> pageSize(int pageSize) {
 		this.pageSize = pageSize;
 
@@ -222,6 +237,7 @@ public class MongoPagingItemReaderBuilder<T> extends MongoItemReaderBuilder<T> {
 	 * @return this instance for method chaining
 	 * @see MongoPagingItemReader#setQuery(Query)
 	 */
+	@Override
 	public MongoPagingItemReaderBuilder<T> query(Query query) {
 		this.query = query;
 
