@@ -24,6 +24,8 @@ import org.springframework.jms.JmsException;
 import org.springframework.jms.core.JmsOperations;
 
 /**
+ * {@link MethodInvocationRecoverer} implementation for JMS.
+ *
  * @author Dave Syer
  * @author Mahmoud Ben Hassine
  *

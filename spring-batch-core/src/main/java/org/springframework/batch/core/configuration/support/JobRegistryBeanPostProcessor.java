@@ -87,8 +87,8 @@ public class JobRegistryBeanPostProcessor
 
 	@Override
 	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-		if (beanFactory instanceof DefaultListableBeanFactory) {
-			this.beanFactory = (DefaultListableBeanFactory) beanFactory;
+		if (beanFactory instanceof DefaultListableBeanFactory defaultListableBeanFactory) {
+			this.beanFactory = defaultListableBeanFactory;
 		}
 	}
 

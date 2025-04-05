@@ -16,10 +16,13 @@
 package org.springframework.batch.item.file.transform;
 
 /**
+ * Exception to report conversion errors.
+ *
  * @author Dave Syer
  * @author Mahmoud Ben Hassine
  *
  */
+@SuppressWarnings("unused") // FIXME
 public class ConversionException extends RuntimeException {
 
 	/**

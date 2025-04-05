@@ -19,6 +19,7 @@ package org.springframework.batch.item.database.support;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import javax.sql.DataSource;
 
@@ -90,35 +91,35 @@ public abstract class AbstractSqlPagingQueryProvider implements PagingQueryProvi
 	}
 
 	/**
-	 * @param selectClause SELECT clause part of SQL query string
+	 * Set the SELECT clause part of SQL query string.
 	 */
 	public void setSelectClause(String selectClause) {
 		this.selectClause = removeKeyWord("select", selectClause);
 	}
 
 	/**
-	 * @return SQL SELECT clause part of SQL query string
+	 * Return the SQL SELECT clause part of SQL query string.
 	 */
 	protected String getSelectClause() {
 		return selectClause;
 	}
 
 	/**
-	 * @param fromClause FROM clause part of SQL query string
+	 * Set the FROM clause part of SQL query string.
 	 */
 	public void setFromClause(String fromClause) {
 		this.fromClause = removeKeyWord("from", fromClause);
 	}
 
 	/**
-	 * @return SQL FROM clause part of SQL query string
+	 * Return the SQL FROM clause part of SQL query string.
 	 */
 	protected String getFromClause() {
 		return fromClause;
 	}
 
 	/**
-	 * @param whereClause WHERE clause part of SQL query string
+	 * Set the WHERE clause part of SQL query string.
 	 */
 	public void setWhereClause(String whereClause) {
 		if (StringUtils.hasText(whereClause)) {
@@ -130,14 +131,14 @@ public abstract class AbstractSqlPagingQueryProvider implements PagingQueryProvi
 	}
 
 	/**
-	 * @return SQL WHERE clause part of SQL query string
+	 * Return the SQL WHERE clause part of SQL query string.
 	 */
 	protected String getWhereClause() {
 		return whereClause;
 	}
 
 	/**
-	 * @param sortKeys key to use to sort and limit page content
+	 * Set the keys to use to sort and limit page content.
 	 */
 	public void setSortKeys(Map<String, Order> sortKeys) {
 		this.sortKeys = sortKeys;
@@ -146,7 +147,7 @@ public abstract class AbstractSqlPagingQueryProvider implements PagingQueryProvi
 	/**
 	 * A Map&lt;String, Boolean&gt; of sort columns as the key and boolean for
 	 * ascending/descending (ascending = true).
-	 * @return sortKey key to use to sort and limit page content
+	 * @return keys to use to sort and limit page content
 	 */
 	@Override
 	public Map<String, Order> getSortKeys() {
@@ -214,7 +215,7 @@ public abstract class AbstractSqlPagingQueryProvider implements PagingQueryProvi
 
 	/**
 	 * Method generating the query string to be used for retrieving the pages following
-	 * the first page. This method must be implemented in sub classes.
+	 * the first page. This method must be implemented in subclasses.
 	 * @param pageSize number of rows to read per page
 	 * @return query string
 	 */

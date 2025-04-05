@@ -404,14 +404,12 @@ public abstract class AbstractFileItemWriter<T> extends AbstractItemStreamItemWr
 		 * @throws IOException If unable to get the offset position
 		 */
 		public long position() throws IOException {
-			long pos = 0;
-
 			if (fileChannel == null) {
 				return 0;
 			}
 
 			outputBufferedWriter.flush();
-			pos = fileChannel.position();
+			long pos = fileChannel.position();
 			if (transactional) {
 				pos += ((TransactionAwareBufferedWriter) outputBufferedWriter).getBufferSize();
 			}
@@ -421,14 +419,14 @@ public abstract class AbstractFileItemWriter<T> extends AbstractItemStreamItemWr
 		}
 
 		/**
-		 * @param append if true, append to previously created file
+		 * Set whether it should append to a previously created file.
 		 */
 		public void setAppendAllowed(boolean append) {
 			this.append = append;
 		}
 
 		/**
-		 * @param executionContext state from which to restore writing from
+		 * Set the {@link ExecutionContext} state from which to restore writing from.
 		 */
 		public void restoreFrom(ExecutionContext executionContext) {
 			lastMarkedByteOffsetPosition = executionContext.getLong(getExecutionContextKey(RESTART_DATA_NAME));
@@ -445,14 +443,14 @@ public abstract class AbstractFileItemWriter<T> extends AbstractItemStreamItemWr
 		}
 
 		/**
-		 * @param shouldDeleteIfExists indicator
+		 * Set whether the file should be deleted, if existing.
 		 */
 		public void setDeleteIfExists(boolean shouldDeleteIfExists) {
 			this.shouldDeleteIfExists = shouldDeleteIfExists;
 		}
 
 		/**
-		 * @param encoding file encoding
+		 * Set the file encoding.
 		 */
 		public void setEncoding(String encoding) {
 			this.encoding = encoding;
@@ -510,8 +508,9 @@ public abstract class AbstractFileItemWriter<T> extends AbstractItemStreamItemWr
 		}
 
 		/**
-		 * @param line String to be written to the file
-		 * @throws IOException If unable to write the String to the file
+		 * Write a line to the file.
+		 * @param line line to be written
+		 * @throws IOException If unable to write the line
 		 */
 		public void write(String line) throws IOException {
 			if (!initialized) {

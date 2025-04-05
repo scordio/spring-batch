@@ -17,6 +17,7 @@ package org.springframework.batch.item.database.support;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import javax.sql.DataSource;
 
 import org.springframework.batch.support.DatabaseType;

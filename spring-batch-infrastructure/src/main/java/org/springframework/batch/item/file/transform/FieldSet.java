@@ -45,7 +45,7 @@ public interface FieldSet {
 	boolean hasNames();
 
 	/**
-	 * @return fields wrapped by this '<code>FieldSet</code>' instance as String values.
+	 * Return fields wrapped by this '<code>FieldSet</code>' instance as String values.
 	 */
 	String[] getValues();
 

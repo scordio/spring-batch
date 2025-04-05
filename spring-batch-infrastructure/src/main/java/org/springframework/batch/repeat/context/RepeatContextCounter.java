@@ -99,7 +99,7 @@ public class RepeatContextCounter {
 	}
 
 	/**
-	 * @return the current value of the counter
+	 * Return the current value of the counter.
 	 */
 	public int getCount() {
 		return getCounter().intValue();

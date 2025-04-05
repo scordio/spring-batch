@@ -39,14 +39,15 @@ public class ExecutionContextUserSupport {
 	}
 
 	/**
-	 * @return name used to uniquely identify this instance's entries in shared context.
+	 * Return the name used to uniquely identify this instance's entries in shared
+	 * context.
 	 */
 	public String getName() {
 		return this.name;
 	}
 
 	/**
-	 * @param name unique name used to create execution context keys.
+	 * Set the unique name used to create execution context keys.
 	 */
 	public void setName(String name) {
 		this.name = name;

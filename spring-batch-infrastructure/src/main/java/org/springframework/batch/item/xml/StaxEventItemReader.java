@@ -108,22 +108,23 @@ public class StaxEventItemReader<T> extends AbstractItemCountingItemStreamItemRe
 	}
 
 	/**
-	 * @param unmarshaller maps xml fragments corresponding to records to objects
+	 * Set the unmarshaller mapping xml fragments corresponding to records to objects
 	 */
 	public void setUnmarshaller(Unmarshaller unmarshaller) {
 		this.unmarshaller = unmarshaller;
 	}
 
 	/**
-	 * @param fragmentRootElementName name of the root element of the fragment
+	 * Set the name of the fragment's root element.
+	 * @param fragmentRootElementName the name of the root element
 	 */
 	public void setFragmentRootElementName(String fragmentRootElementName) {
 		setFragmentRootElementNames(new String[] { fragmentRootElementName });
 	}
 
 	/**
-	 * @param fragmentRootElementNames list of the names of the root element of the
-	 * fragment
+	 * Set the names of the fragment's root element.
+	 * @param fragmentRootElementNames the names of the root element
 	 */
 	public void setFragmentRootElementNames(String[] fragmentRootElementNames) {
 		this.fragmentRootElementNames = new ArrayList<>();

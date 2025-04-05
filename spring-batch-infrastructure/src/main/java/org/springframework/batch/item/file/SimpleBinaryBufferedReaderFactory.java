@@ -46,14 +46,14 @@ public class SimpleBinaryBufferedReaderFactory implements BufferedReaderFactory 
 	private String lineEnding = DEFAULT_LINE_ENDING;
 
 	/**
-	 * @param lineEnding {@link String} indicating what defines the end of a "line".
+	 * Set the {@link String} indicating what defines the end of a "line".
 	 */
 	public void setLineEnding(String lineEnding) {
 		this.lineEnding = lineEnding;
 	}
 
 	@Override
-	public BufferedReader create(Resource resource, String encoding) throws UnsupportedEncodingException, IOException {
+	public BufferedReader create(Resource resource, String encoding) throws IOException {
 		return new BinaryBufferedReader(new InputStreamReader(resource.getInputStream(), encoding), lineEnding);
 	}
 

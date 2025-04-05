@@ -172,7 +172,7 @@ public class MongoItemReader<T> extends AbstractPaginatedDataItemReader<T> imple
 	}
 
 	/**
-	 * @param collection Mongo collection to be queried.
+	 * The Mongo collection to be queried.
 	 */
 	public void setCollection(String collection) {
 		this.collection = collection;

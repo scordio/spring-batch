@@ -24,6 +24,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
+import java.nio.charset.Charset;
+
 /**
  * A builder implementation for the {@link AvroItemReader}.
  *

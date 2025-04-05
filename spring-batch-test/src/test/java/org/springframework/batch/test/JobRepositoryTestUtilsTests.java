@@ -16,6 +16,7 @@
 package org.springframework.batch.test;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,7 +83,7 @@ class JobRepositoryTestUtilsTests {
 		utils = new JobRepositoryTestUtils(jobRepository);
 		List<JobExecution> list = new ArrayList<>();
 		JobExecution jobExecution = jobRepository.createJobExecution("job", new JobParameters());
-		jobExecution.setEndTime(LocalDateTime.now());
+		jobExecution.setEndTime(LocalDateTime.now(ZoneId.systemDefault()));
 		jobExecution.setStatus(BatchStatus.COMPLETED);
 		list.add(jobExecution);
 		jobRepository.update(jobExecution);

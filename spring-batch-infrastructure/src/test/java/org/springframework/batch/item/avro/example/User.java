@@ -119,15 +119,18 @@ public class User extends org.apache.avro.specific.SpecificRecordBase
 		this.favorite_color = favorite_color;
 	}
 
+	@Override
 	public SpecificData getSpecificData() {
 		return MODEL$;
 	}
 
+	@Override
 	public org.apache.avro.Schema getSchema() {
 		return SCHEMA$;
 	}
 
 	// Used by DatumWriter. Applications should not call.
+	@Override
 	public Object get(int field$) {
 		return switch (field$) {
 			case 0 -> name;
@@ -138,7 +141,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase
 	}
 
 	// Used by DatumReader. Applications should not call.
-	@SuppressWarnings(value = "unchecked")
+	@Override
 	public void put(int field$, Object value$) {
 		switch (field$) {
 			case 0 -> name = (CharSequence) value$;
@@ -515,8 +518,7 @@ public class User extends org.apache.avro.specific.SpecificRecordBase
 							this.favorite_color = null;
 						}
 						else {
-							this.favorite_color = in
-								.readString(this.favorite_color instanceof Utf8 ? (Utf8) this.favorite_color : null);
+							this.favorite_color = in.readString(this.favorite_color instanceof Utf8 utf8 ? utf8 : null);
 						}
 					}
 					default -> throw new java.io.IOException("Corrupt ResolvingDecoder.");

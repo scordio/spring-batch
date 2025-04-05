@@ -22,6 +22,8 @@ import java.io.InputStreamReader;
 import org.springframework.core.io.Resource;
 
 /**
+ * The default {@link BufferedReaderFactory} implementation.
+ *
  * @author Dave Syer
  * @author Mahmoud Ben Hassine
  * @since 2.1

@@ -19,6 +19,7 @@ package org.springframework.batch.item.file;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -98,8 +99,7 @@ public class FlatFileItemReader<T> extends AbstractItemCountingItemStreamItemRea
 	}
 
 	/**
-	 * @param skippedLinesCallback will be called for each one of the initial skipped
-	 * lines before any items are read.
+	 * Set the callback for the initially skipped lines before any items are read.
 	 */
 	public void setSkippedLinesCallback(LineCallbackHandler skippedLinesCallback) {
 		this.skippedLinesCallback = skippedLinesCallback;

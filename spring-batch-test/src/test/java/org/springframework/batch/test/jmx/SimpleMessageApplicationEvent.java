@@ -20,10 +20,9 @@ import org.springframework.context.ApplicationEvent;
 /**
  * @author Dave Syer
  * @author Mahmoud Ben Hassine
- *
  */
 @SuppressWarnings("serial")
-public class SimpleMessageApplicationEvent extends ApplicationEvent {
+class SimpleMessageApplicationEvent extends ApplicationEvent {
 
 	private final String message;
 

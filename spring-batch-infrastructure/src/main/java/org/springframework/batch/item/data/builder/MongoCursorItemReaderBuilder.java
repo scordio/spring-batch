@@ -29,6 +29,8 @@ import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
 /**
+ * A builder implementation for the {@link MongoCursorItemReader}.
+ *
  * @author LEE Juchan
  * @author Mahmoud Ben Hassine
  * @since 5.1

@@ -150,8 +150,8 @@ public abstract class AbstractListenerFactoryBean<T> implements FactoryBean<Obje
 		// create a proxy listener for only the interfaces that have methods to
 		// be called
 		ProxyFactory proxyFactory = new ProxyFactory();
-		if (delegate instanceof Advised) {
-			proxyFactory.setTargetSource(((Advised) delegate).getTargetSource());
+		if (delegate instanceof Advised advised) {
+			proxyFactory.setTargetSource(advised.getTargetSource());
 		}
 		else {
 			proxyFactory.setTarget(delegate);

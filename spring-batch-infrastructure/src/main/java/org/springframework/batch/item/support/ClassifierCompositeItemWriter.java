@@ -41,7 +41,7 @@ public class ClassifierCompositeItemWriter<T> implements ItemWriter<T> {
 	private Classifier<T, ItemWriter<? super T>> classifier = new ClassifierSupport<>(null);
 
 	/**
-	 * @param classifier the classifier to set
+	 * Set the {@link Classifier}.
 	 */
 	public void setClassifier(Classifier<T, ItemWriter<? super T>> classifier) {
 		Assert.notNull(classifier, "A classifier is required.");

@@ -25,6 +25,7 @@ package org.springframework.batch.item.file.transform;
 public interface FieldExtractor<T> {
 
 	/**
+	 * Extract the item's parts.
 	 * @param item the object that contains the information to be extracted.
 	 * @return an array containing item's parts
 	 */

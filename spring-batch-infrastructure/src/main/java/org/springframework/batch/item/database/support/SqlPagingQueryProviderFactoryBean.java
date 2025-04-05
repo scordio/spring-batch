@@ -33,6 +33,7 @@ import static org.springframework.batch.support.DatabaseType.SYBASE;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.sql.DataSource;
@@ -91,49 +92,49 @@ public class SqlPagingQueryProviderFactoryBean implements FactoryBean<PagingQuer
 	}
 
 	/**
-	 * @param groupClause SQL GROUP BY clause part of the SQL query string
+	 * Set the SQL GROUP BY clause part of the SQL query string.
 	 */
 	public void setGroupClause(String groupClause) {
 		this.groupClause = groupClause;
 	}
 
 	/**
-	 * @param databaseType the databaseType to set
+	 * Set the database type.
 	 */
 	public void setDatabaseType(String databaseType) {
 		this.databaseType = databaseType;
 	}
 
 	/**
-	 * @param dataSource the dataSource to set
+	 * Set the {@link DataSource}.
 	 */
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
 
 	/**
-	 * @param fromClause the fromClause to set
+	 * Set the SQL FROM clause.
 	 */
 	public void setFromClause(String fromClause) {
 		this.fromClause = fromClause;
 	}
 
 	/**
-	 * @param whereClause the whereClause to set
+	 * Set the SQL WHERE clause.
 	 */
 	public void setWhereClause(String whereClause) {
 		this.whereClause = whereClause;
 	}
 
 	/**
-	 * @param selectClause the selectClause to set
+	 * Set the SQL SELECT clause.
 	 */
 	public void setSelectClause(String selectClause) {
 		this.selectClause = selectClause;
 	}
 
 	/**
-	 * @param sortKeys the sortKeys to set
+	 * Set the sort keys.
 	 */
 	public void setSortKeys(Map<String, Order> sortKeys) {
 		this.sortKeys = sortKeys;

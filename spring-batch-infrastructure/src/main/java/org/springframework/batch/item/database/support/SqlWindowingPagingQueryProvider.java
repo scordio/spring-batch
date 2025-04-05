@@ -18,6 +18,8 @@ package org.springframework.batch.item.database.support;
 
 import org.springframework.util.StringUtils;
 
+import java.util.Locale;
+
 /**
  * Generic Paging Query Provider using standard SQL:2003 windowing functions. These
  * features are supported by DB2, Oracle, SQL Server 2005, Sybase and Apache Derby version
@@ -103,11 +105,7 @@ public class SqlWindowingPagingQueryProvider extends AbstractSqlPagingQueryProvi
 	}
 
 	protected String getOverClause() {
-		StringBuilder sql = new StringBuilder();
-
-		sql.append(" ORDER BY ").append(buildSortClause(this));
-
-		return sql.toString();
+		return " ORDER BY " + buildSortClause(this);
 	}
 
 	protected String getOverSubstituteClauseStart() {

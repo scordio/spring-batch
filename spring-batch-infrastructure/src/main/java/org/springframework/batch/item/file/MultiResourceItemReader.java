@@ -141,8 +141,8 @@ public class MultiResourceItemReader<T> extends AbstractItemStreamItemReader<T> 
 
 	private T readFromDelegate() throws Exception {
 		T item = delegate.read();
-		if (item instanceof ResourceAware) {
-			((ResourceAware) item).setResource(resources[currentResource]);
+		if (item instanceof ResourceAware resourceAware) {
+			resourceAware.setResource(resources[currentResource]);
 		}
 		return item;
 	}
@@ -215,14 +215,14 @@ public class MultiResourceItemReader<T> extends AbstractItemStreamItemReader<T> 
 	}
 
 	/**
-	 * @param delegate reads items from single {@link Resource}.
+	 * Set the delegate that reads items from a single {@link Resource}.
 	 */
 	public void setDelegate(ResourceAwareItemReaderItemStream<? extends T> delegate) {
 		this.delegate = delegate;
 	}
 
 	/**
-	 * Set the boolean indicating whether or not state should be saved in the provided
+	 * Set the boolean indicating whether state should be saved in the provided
 	 * {@link ExecutionContext} during the {@link ItemStream} call to update.
 	 * @param saveState true to update ExecutionContext. False do not update
 	 * ExecutionContext.
@@ -232,15 +232,16 @@ public class MultiResourceItemReader<T> extends AbstractItemStreamItemReader<T> 
 	}
 
 	/**
-	 * @param comparator used to order the injected resources, by default compares
-	 * {@link Resource#getFilename()} values.
+	 * Set the {@link Comparator} used to order the injected resources.
+	 * <p>
+	 * The default behavior compares {@link Resource#getFilename()} values.
 	 */
 	public void setComparator(Comparator<Resource> comparator) {
 		this.comparator = comparator;
 	}
 
 	/**
-	 * @param resources input resources
+	 * Set the input resources.
 	 */
 	public void setResources(Resource[] resources) {
 		Assert.notNull(resources, "The resources must not be null");
