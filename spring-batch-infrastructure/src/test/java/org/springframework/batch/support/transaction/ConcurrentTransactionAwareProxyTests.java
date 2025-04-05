@@ -108,7 +108,7 @@ class ConcurrentTransactionAwareProxyTests {
 	@Test
 	void testTransactionalContains() {
 		final Map<Long, Map<String, String>> map = TransactionAwareProxyFactory.createAppendOnlyTransactionalMap();
-		boolean result = new TransactionTemplate(transactionManager).execute(status -> map.containsKey("foo"));
+		boolean result = new TransactionTemplate(transactionManager).execute(status -> map.containsKey(0L));
 		assertFalse(result);
 	}
 
